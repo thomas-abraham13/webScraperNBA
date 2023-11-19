@@ -2,10 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 
 # URL of the website you want to scrape
-url = 'https://example.com'
+URL = 'https://example.com'
 
 # Send an HTTP request to the URL
-response = requests.get(url)
+response = requests.get(URL)
 
 # Check if the request was successful (status code 200)
 if response.status_code == 200:
