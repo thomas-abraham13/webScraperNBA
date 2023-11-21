@@ -1,11 +1,15 @@
+"""
+webScraper for the official NBA website
+"""
+
 import requests
 from bs4 import BeautifulSoup
 
-# URL of the website you want to scrape
+# URL of the website to scrape
 URL = 'https://example.com'
 
 # Send an HTTP request to the URL
-response = requests.get(URL)
+response = requests.get(URL , timeout=10)
 
 # Check if the request was successful (status code 200)
 if response.status_code == 200:
@@ -21,4 +25,3 @@ if response.status_code == 200:
         print(link.get('href'))
 else:
     print('Failed to retrieve the webpage')
-    
