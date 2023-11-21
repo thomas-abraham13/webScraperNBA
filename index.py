@@ -1,3 +1,7 @@
+"""
+webScraper for the official NBA website
+"""
+
 import requests
 from bs4 import BeautifulSoup
 
