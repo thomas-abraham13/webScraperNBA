@@ -21,4 +21,3 @@ if response.status_code == 200:
         print(link.get('href'))
 else:
     print('Failed to retrieve the webpage')
-
