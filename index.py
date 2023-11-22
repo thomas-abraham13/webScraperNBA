@@ -4,9 +4,10 @@ webScraper for the official NBA website
 
 import requests
 from bs4 import BeautifulSoup
+import nba_scraper.nba_scraper as ns
 
 # URL of the website to scrape
-URL = 'https://example.com'
+URL = 'https://www.nba.com/'
 
 # Send an HTTP request to the URL
 response = requests.get(URL , timeout=10)
@@ -25,3 +26,7 @@ if response.status_code == 200:
         print(link.get('href'))
 else:
     print('Failed to retrieve the webpage')
+
+# all nba game ids have two leading zeros but you can omit these
+nba_df = ns.scrape_game([21800001, 21800002])
+ns.scrape_game([21800001, 21800002], data_format='csv', data_dir='/Users/thomasabraham/Projects/webScraperNBA/scraped_data') # pylint: disable=line-too-long
