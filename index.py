@@ -28,13 +28,13 @@ if response.status_code == 200:
 else:
     print('Failed to retrieve the webpage')
 
-if(platform.system() == 'Darwin'):
-    loc='/Users/thomasabraham/Projects/webScraperNBA/scraped_data'
-elif(platform.system() == 'Windows'):
-    loc=''
+if platform.system() == 'Darwin':
+    LOC='/Users/thomasabraham/Projects/webScraperNBA/scraped_data'
+elif platform.system() == 'Windows':
+    LOC=''
 else:
-    loc=''
+    LOC=''
 
 # all nba game ids have two leading zeros but you can omit these
 nba_df = ns.scrape_game([21800001, 21800002])
-ns.scrape_game([21800001, 21800002], data_format='csv', data_dir=loc)
+ns.scrape_game([21800001, 21800002], data_format='csv', data_dir=LOC)
