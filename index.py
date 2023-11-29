@@ -28,6 +28,7 @@ if response.status_code == 200:
 else:
     print('Failed to retrieve the webpage')
 
+# Setup a data directory based on the user's OS
 if platform.system() == 'Darwin':
     LOC='/Users/thomasabraham/Projects/webScraperNBA/scraped_data'
 elif platform.system() == 'Windows':
