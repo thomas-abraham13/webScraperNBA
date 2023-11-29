@@ -2,6 +2,7 @@
 webScraper for the official NBA website
 """
 
+import platform
 import requests
 from bs4 import BeautifulSoup
 import nba_scraper.nba_scraper as ns
@@ -27,6 +28,13 @@ if response.status_code == 200:
 else:
     print('Failed to retrieve the webpage')
 
+if(platform.system() == 'Darwin'):
+    loc='/Users/thomasabraham/Projects/webScraperNBA/scraped_data'
+elif(platform.system() == 'Windows'):
+    loc=''
+else:
+    loc=''
+
 # all nba game ids have two leading zeros but you can omit these
 nba_df = ns.scrape_game([21800001, 21800002])
-ns.scrape_game([21800001, 21800002], data_format='csv', data_dir='/Users/thomasabraham/Projects/webScraperNBA/scraped_data') # pylint: disable=line-too-long
+ns.scrape_game([21800001, 21800002], data_format='csv', data_dir=loc) # pylint: disable=line-too-long
