@@ -1,5 +1,5 @@
 """
-webScraper for the official NBA website
+Web Scraper for NBA data
 """
 
 import platform
@@ -11,12 +11,12 @@ import nba_scraper.nba_scraper as ns
 URL = 'https://www.nba.com/'
 
 # Send an HTTP request to the URL
-response = requests.get(URL , timeout=10)
+response = requests.get(URL,timeout=10)
 
 # Check if the request was successful (status code 200)
 if response.status_code == 200:
     # Parse the HTML content using BeautifulSoup
-    soup = BeautifulSoup(response.text, 'html.parser')
+    soup = BeautifulSoup(response.text,'html.parser')
 
     # Find specific elements on the page by their HTML tags, classes, IDs, etc.
     # For example, let's find all the links (anchor tags) on the page
